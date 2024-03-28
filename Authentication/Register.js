@@ -54,15 +54,20 @@ const Register = () => {
             return;
         }
         try {
+           // Hash the password before sending it to the server
+            const hashedPwd = await bcrypt.hash(pwd, 10); // 10 is the number of salt rounds
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ user, pwd: hashedPwd }), // Send the hashed password
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data));
+            console.log(response?.data);
+            console.log(response?.accessToken);
+            console.log(JSON.stringify(response))
             setSuccess(true);
+            // Clear state and controlled inputs
             setUser('');
             setPwd('');
             setMatchPwd('');
