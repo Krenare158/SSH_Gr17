@@ -2,10 +2,11 @@
 
 ## Description
 
-The Electronic Services project aims to provide electronic services to users through a web application. This could include features such as online registration, authentication, and various electronic transactions.
+The Electronic Services project aims to provide electronic services to users through a web application. This could include features such as online registration, login, authentification, and other online services.
 
 ## Technologies Used
 
+- React.js
 - Node.js
 - Express.js
 - Sequelize
@@ -13,23 +14,29 @@ The Electronic Services project aims to provide electronic services to users thr
 
 ## Installation
 
-1. Clone the repository: `git clone <repository-url>`
+1. Creating the project: `npx create-react-app SSH_Gr18`
 2. Install dependencies: `npm install`
-
-## Setup
-
-1. Configure the database connection in `config/config.json`.
-2. Run the database migrations: `npx sequelize-cli db:migrate`
-3. Start the server: `npm start`
 
 ## Usage
 
-To use the application, users can navigate to the provided API endpoints to register, log in, and perform various electronic transactions.
+To use the application, users can navigate to the provided API endpoints to register, log in, and perform various electronic transactions. To do this we have chose to implemet ORM by Sequelize.
+
+## Setup
+1. To install Sequelize and Sequelize-CLI: `npm install sequelize sequelize-cli`
+2. To create necessary folders, such as Models and Confug: `sequelize init`
+3. To use paths whenever and where ever we want: `npm install paths`
+4. For security: `npm install fs`
+5. To install mysql2: `npm install mysql2`
+6. Configure the database connection in: `config/config.json`.
+7. Run the database migrations: `npx sequelize-cli db:migrate`
+8. To start the server: `node server.js`
+9. To start the application: `npm start`
+   
 
 ## Features
 
 - User registration
-- User authentication
+- User login
 - CRUD operations for electronic services entities (e.g., orders, transactions, etc.)
 
 ## Database Schema
@@ -50,10 +57,10 @@ The database schema includes tables for users, electronic transactions, and any 
   }
 
  ### Code Structure
-The project's codebase is organized into folders for controllers, models, routes, and other relevant components. Each folder contains files responsible for specific functionalities, following the MVC (Model-View-Controller) pattern.
+The project's codebase is organized into folders for  models,config, auths, server, client and other relevant components.
 
 ### Development Workflow
-The project follows a standard development workflow with version control practices using Git. Feature branches are created for new developments, and pull requests are submitted for code review before merging into the main branch.
+The project follows a standard development workflow. Feature branches are created for new developments, and pull requests are submitted for code review before merging into the main branch.
 
  ### Credits
 This project was developed by Liburna Berisha, Ilirjana Suka, Krenare Kyreziu and Majlinda Halilaj.
