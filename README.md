@@ -2,7 +2,7 @@
 
 ## Description
 
-The Electronic Services project aims to provide electronic services to users through a web application. This could include features such as online registration, login, authentification, and other online services.
+The Electronic Services project aims to provide electronic services to users through a web application. This could include features such as online registration, login, authentication, and other online services.
 
 ## Technologies Used
 
