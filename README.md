@@ -57,6 +57,17 @@ The database schema includes tables for users, electronic transactions, and any 
     "password": "password"
   }
 
+  ### User Login
+
+- **POST /login**: Log in with username and password.
+
+  Request Body:
+  ```json
+  {
+    "username": "example",
+    "password": "password"
+  }
+
  ### Code Structure
 The project's codebase is organized into folders for  models,config, auths, server, client and other relevant components.
 
