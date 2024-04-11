@@ -1,18 +1,26 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+const { Sequelize, DataTypes } = require('sequelize');
+const bcrypt = require('bcryptjs'); // Import bcrypt for hashing
+const db = require("../models");
 
 
-app.use(bodyParser.json());
-
-app.post('/api/greet', (req, res) => {
-    const name = req.body.name;
-    res.send(`Hello, ${name}!`);
+const sequelize = new Sequelize('sisteme', 'root', 'Lana.1234', {
+    host: 'localhost',
+    dialect: 'mysql'
 });
 
+(async () => {
+    try {
+        await sequelize.sync();
+        console.log('Database synchronized');
+    } catch (error) {
+        console.error('Error synchronizing database:', error);
+    }
+})();
 
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+app.use(express.json());
+
+
 
