@@ -48,3 +48,12 @@ The database schema includes tables for users, electronic transactions, and any 
     "username": "example",
     "password": "password"
   }
+
+ ### Code Structure
+The project's codebase is organized into folders for controllers, models, routes, and other relevant components. Each folder contains files responsible for specific functionalities, following the MVC (Model-View-Controller) pattern.
+
+### Development Workflow
+The project follows a standard development workflow with version control practices using Git. Feature branches are created for new developments, and pull requests are submitted for code review before merging into the main branch.
+
+ ### Credits
+This project was developed by Liburna Berisha, Ilirjana Suka, Krenare Kyreziu and Majlinda Halilaj.
