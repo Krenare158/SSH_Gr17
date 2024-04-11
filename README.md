@@ -10,7 +10,7 @@ The Electronic Services project aims to provide electronic services to users thr
 - Node.js
 - Express.js
 - Sequelize
-- MySQL (or other database)
+- MySQL
 
 ## Installation
 
