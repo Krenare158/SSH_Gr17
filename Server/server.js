@@ -42,6 +42,53 @@ app.post('/register', async (req, res) => {
         }
     }
 });
+const Login = sequelize.define('login', {
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+
+    tableName: 'User' 
+});
+
+db.sequelize = sequelize;
+
+(async () => {
+    try {
+        await sequelize.sync();
+        console.log('Database synchronized');
+    } catch (error) {
+        console.error('Error synchronizing database:', error);
+    }
+})();
+
+app.use(express.json());
+
+app.post('/login', async (req, res) => {
+    const { username, password} = req.body;
+    try {
+        
+        const hashedPwd = await bcrypt.hash(passwordR, 10); 
+        const newUserRecord = await Register.create({
+            username,
+            password: hashedPwd 
+        });
+        console.log('Userlogin successfully:',userRecord);
+        res.send('User login successfully');
+    } catch (error) {
+        if (error.name === 'SequelizeUniqueConstraintError') {
+            res.status(409).send('Username Taken');
+        } else {
+            console.error('Error logining user:', error.message);
+            res.status(500).send('Login Failed');
+        }
+    }
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
