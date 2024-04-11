@@ -57,8 +57,8 @@ The database schema includes tables for users, electronic transactions, and any 
     "password": "password"
   }
 
-  ### User Login
-
+  
+### User Login
 - **POST /login**: Log in with username and password.
 
   Request Body:
