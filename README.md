@@ -28,9 +28,10 @@ To use the application, users can navigate to the provided API endpoints to regi
 4. For security: `npm install fs`
 5. To install mysql2: `npm install mysql2`
 6. Configure the database connection in: `config/config.json`.
-7. Run the database migrations: `npx sequelize-cli db:migrate`
-8. To start the server: `node server.js`
-9. To start the application: `npm start`
+7. To create new migrations: `npx sequelize-cli migration:generate  --name create--file name`
+8. To run the database migrations: `npx sequelize-cli db:migrate`
+9. To start the server: `node server.js`
+10. To start the application: `npm start`
    
 
 ## Features
