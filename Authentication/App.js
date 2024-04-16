@@ -24,6 +24,7 @@ import Shend1 from './client/Sherbimet/Shendetsia/Shend1';
 import Shend2 from './client/Sherbimet/Shendetsia/Shend2';
 import Shend3 from './client/Sherbimet/Shendetsia/Shend3';
 import Adresa from './client/Sherbimet/Adresa/Adresa';
+import Arsimi from './client/Sherbimet/Arsimi/Arsimi';
 
 function App() {
     return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="/Shendetsia/Shend2" element={<Shend2 />} />
           <Route path="/Shendetsia/Shend3" element={<Shend3 />} />
           <Route path="/Sherbimet/Adresa" element={<Adresa />} />
+          <Route path="/Sherbimet/Arsimi" element={<Arsimi />} />
         </Routes>
       </BrowserRouter>
     );
