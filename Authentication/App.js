@@ -25,6 +25,10 @@ import Shend2 from './client/Sherbimet/Shendetsia/Shend2';
 import Shend3 from './client/Sherbimet/Shendetsia/Shend3';
 import Adresa from './client/Sherbimet/Adresa/Adresa';
 import Arsimi from './client/Sherbimet/Arsimi/Arsimi';
+import AutoT from './client/Sherbimet/Automjeti/AutoT'; 
+import AutoB from './client/Sherbimet/Automjeti/AutoB'; 
+import AutoP from './client/Sherbimet/Automjeti/AutoP';
+
 
 function App() {
     return (
@@ -57,6 +61,9 @@ function App() {
           <Route path="/Shendetsia/Shend3" element={<Shend3 />} />
           <Route path="/Sherbimet/Adresa" element={<Adresa />} />
           <Route path="/Sherbimet/Arsimi" element={<Arsimi />} />
+          <Route path="/Automjeti/AutoT" element={<AutoT />} />
+          <Route path="/Automjeti/AutoB" element={<AutoB />} />
+          <Route path="/Automjeti/AutoP" element={<AutoP />} />
         </Routes>
       </BrowserRouter>
     );
