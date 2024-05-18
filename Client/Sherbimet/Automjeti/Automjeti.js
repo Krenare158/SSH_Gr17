@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Automjeti.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard, faCar} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faCar} from '@fortawesome/free-solid-svg-icons';
 
 const Automjeti = () => {
 
@@ -59,42 +59,42 @@ const Automjeti = () => {
             <div className="automjeti-service-card">
               <div className="automjeti-card-content">
                 <FontAwesomeIcon icon={faCar} className="automjeti-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <Link to="/Automjeti/AutoT" style={{ color: '#333' }} className='linkcla'>Taksa komunale për regjistrim të automjetit personal</Link>
                 <span className="automjeti-arrow">&#62;</span>
               </div>
             </div>
             <div className="automjeti-service-card">
               <div className="automjeti-card-content">
                 <FontAwesomeIcon icon={faCar} className="automjeti-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <Link to="/Automjeti/AutoB" style={{ color: '#333' }} className='linkcla'>Taksa komunale për regjistrim të automjetit për persona të tjerë</Link>
                 <span className="automjeti-arrow">&#62;</span>
               </div>
             </div>
             <div className="automjeti-service-card">
               <div className="automjeti-card-content">
                 <FontAwesomeIcon icon={faCar} className="automjeti-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <Link to="/Pa" style={{ color: '#333' }} className='linkcla' onClick={(e) => handleLinkClick(e, "Nuk është identifikuar asnjë automjet konform numrit tuaj të identifikimit.")}>Vazhdimi i regjistrimit të automjetitnnga pronari individual</Link>
                 <span className="automjeti-arrow">&#62;</span>
               </div>
             </div>
             <div className="automjeti-service-card">
               <div className="automjeti-card-content">
                 <FontAwesomeIcon icon={faCar} className="automjeti-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <Link to="/Pa" style={{ color: '#333' }} className='linkcla' onClick={(e) => handleLinkClick(e, "Llogaria juaj është e tipit individuale dhe nuk është identifikuar ndërlidhje me llogari biznesore. Nëse posedoni biznes të regjistruar në emrin tuaj, atëherë ju lusim që të regjistroni atë në llogarinë tuaj përmes shtegut: Profili > Bizneset.")}>Vazhdimi i regjistrimit te automjetit nga pronari biznesor</Link>
                 <span className="automjeti-arrow">&#62;</span>
               </div>
             </div>
             <div className="automjeti-service-card">
               <div className="automjeti-card-content">
                 <FontAwesomeIcon icon={faCar} className="automjeti-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <Link to="/Automjeti/AutoP" style={{ color: '#333' }} className='linkcla'>Kerkese per targa me porosi nga pronari individual</Link>
                 <span className="automjeti-arrow">&#62;</span>
               </div>
             </div>
             <div className="automjeti-service-card">
               <div className="automjeti-card-content">
                 <FontAwesomeIcon icon={faCar} className="automjeti-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <Link to="/Pa" style={{ color: '#333' }} className='linkcla' onClick={(e) => handleLinkClick(e, "Llogaria juaj është e tipit individuale dhe nuk është identifikuar ndërlidhje me llogari biznesore. Nëse posedoni biznes të regjistruar në emrin tuaj, atëherë ju lusim që të regjistroni atë në llogarinë tuaj përmes shtegut: Profili > Bizneset.")}>Kerkese per targa me porosi nga pronari biznesor</Link>
                 <span className="automjeti-arrow">&#62;</span>
               </div>
             </div>
@@ -112,4 +112,3 @@ const Automjeti = () => {
 }
 
 export default Automjeti;
-
