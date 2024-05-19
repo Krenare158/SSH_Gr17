@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Komunalite.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
+import { faSearch,faFile} from '@fortawesome/free-solid-svg-icons';
 
 const Komunalite = () => {
   return (
@@ -28,71 +29,15 @@ const Komunalite = () => {
           <div className="komunalite-service-cards-wrapper">
             <div className="komunalite-service-card">
               <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faFile} className="komunalite-card-icon" />
+                <Link to="/Komunalite/Kesco" style={{ color: '#333' }} className='linkcla'>KESCO - Shiko dhe paguaj faturat e energjisë elektrike</Link>
                 <span className="komunalite-arrow">&#62;</span>
               </div>
             </div>
             <div className="komunalite-service-card">
               <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="komunalite-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="komunalite-service-card">
-              <div className="komunalite-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="komunalite-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faFile} className="komunalite-card-icon" />
+                <Link to="/Komunalite/Kru" style={{ color: '#333' }} className='linkcla'>KRU Hidrodrini - Shiko dhe paguaj faturat e ujit</Link>
                 <span className="komunalite-arrow">&#62;</span>
               </div>
             </div>
@@ -103,4 +48,3 @@ const Komunalite = () => {
 }
 
 export default Komunalite;
-
