@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Policia.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
+import { faSearch} from '@fortawesome/free-solid-svg-icons';
+import { faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 const Policia = () => {
+  
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+
+
+  const handleLinkClick = (event, message) => {
+      event.preventDefault();
+      setAlertMessage(message);
+      setShowAlert(true);
+  };
+
+  const handleCloseAlert = () => {
+      setShowAlert(false);
+  };
   return (
       <div className="policia-service-page">
         <div className="policia-service-section">
@@ -28,37 +45,43 @@ const Policia = () => {
           <div className="policia-service-cards-wrapper">
             <div className="policia-service-card">
               <div className="policia-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="policia-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faShieldAlt} className="policia-card-icon" />
+                <Link to="/Policia/Policia1" style={{ color: '#333' }} className='linkcla'>Kërkimi i gjobave individuale</Link>
                 <span className="policia-arrow">&#62;</span>
               </div>
             </div>
             <div className="policia-service-card">
               <div className="policia-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="policia-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faShieldAlt} className="policia-card-icon" />
+                <Link to="/Policia/Policia2" style={{ color: '#333' }} className='linkcla'>Kërkimi i gjobave sipas referencës</Link>
                 <span className="policia-arrow">&#62;</span>
               </div>
             </div>
             <div className="policia-service-card">
               <div className="policia-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="policia-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faShieldAlt} className="policia-card-icon" />
+                <Link to="/Policia/Policia3" style={{ color: '#333' }} className='linkcla'>Vërtetimi i të kalurës kriminale</Link>
                 <span className="policia-arrow">&#62;</span>
               </div>
             </div>
             <div className="policia-service-card">
               <div className="policia-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="policia-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faShieldAlt} className="policia-card-icon" />
+                <Link to="/P" style={{ color: '#333' }} className='linkcla' onClick={(e) => handleLinkClick(e, "Për momentin nuk ka ndonjë konkurs të hapur.")}>Aplikimi për polic të ri</Link>
                 <span className="policia-arrow">&#62;</span>
               </div>
             </div>
           </div>
         </div>
+        {showAlert && (
+          <div className="custom-alert">
+              <h5>Njoftim</h5>
+              <p>{alertMessage}</p>
+              <button onClick={handleCloseAlert}>Close</button>
+          </div>
+      )}
       </div>
   );
 }
 
 export default Policia;
-
