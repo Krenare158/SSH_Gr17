@@ -1,7 +1,8 @@
 import React from 'react';
 import './Kontributet.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faFileInvoiceDollar} from '@fortawesome/free-solid-svg-icons';
 
 const Kontributet = () => {
   return (
@@ -28,8 +29,8 @@ const Kontributet = () => {
           <div className="kontributet-service-cards-wrapper">
             <div className="kontributet-service-card">
               <div className="kontributet-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="kontributet-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faFileInvoiceDollar} className="kontributet-card-icon" />
+                <Link to="/Kontributet/Kon" style={{ color: '#333' }} className='linkcla'>Pasqyra e kursimeve pensionale</Link>
                 <span className="kontributet-arrow">&#62;</span>
               </div>
             </div>
@@ -40,4 +41,3 @@ const Kontributet = () => {
 }
 
 export default Kontributet;
-
