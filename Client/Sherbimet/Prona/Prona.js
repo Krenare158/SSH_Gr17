@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Prona.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Prona = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+
+
+  const handleLinkClick = (event, message) => {
+      event.preventDefault();
+      setAlertMessage(message);
+      setShowAlert(true);
+  };
+
+  const handleCloseAlert = () => {
+      setShowAlert(false);
+  };
   return (
     <div className="prona-service-page">
       <div className="prona-service-section">
@@ -28,72 +42,36 @@ const Prona = () => {
         <div className="prona-service-cards-wrapper">
           <div className="prona-service-card">
             <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
+              <FontAwesomeIcon icon={faHome} className="prona-card-icon" />
+              <Link to="/P" style={{ color: '#333' }} className='linkcla' onClick={(e) => handleLinkClick(e, "Nuk është identifikuar asnjë pronë sipas numrit tuaj personal.Nëse keni prona tuaja dhe për të njëjtat nuk mund të nxirrni certifikatë, duhet të drejtoheni për verifikim dhe azhurnim të të dhënave personale në zyrën kadastrale komunale në komunën ku gjendet prona.")}>Certifikat mbi të drejtat në pronën e palujtshme</Link>
               <span className="prona-arrow">&#62;</span>
             </div>
           </div>
           <div className="prona-service-card">
             <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
+              <FontAwesomeIcon icon={faHome} className="prona-card-icon" />
+              <Link to="/P" style={{ color: '#333' }} className='linkcla' onClick={(e) => handleLinkClick(e, "I/e nderuar,Sipas Agjencisë për Regjistrimin e Bizneseve të Kosovës (ARBK), nuk është identifikuar asnjë biznes i regjistruar sipas numrit tuaj personal.Ju lutemi të siguroheni që posedoni biznese aktive të regjistruara në ARBK.")}>Certifikat mbi të drejtat në pronën e palujtshme për biznese</Link>
               <span className="prona-arrow">&#62;</span>
             </div>
           </div>
           <div className="prona-service-card">
             <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
-              <span className="prona-arrow">&#62;</span>
-            </div>
-          </div>
-          <div className="prona-service-card">
-            <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
-              <span className="prona-arrow">&#62;</span>
-            </div>
-          </div>
-          <div className="prona-service-card">
-            <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
-              <span className="prona-arrow">&#62;</span>
-            </div>
-          </div>
-          <div className="prona-service-card">
-            <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
-              <span className="prona-arrow">&#62;</span>
-            </div>
-          </div>
-          <div className="prona-service-card">
-            <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
-              <span className="prona-arrow">&#62;</span>
-            </div>
-          </div>
-          <div className="prona-service-card">
-            <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
-              <span className="prona-arrow">&#62;</span>
-            </div>
-          </div>
-          <div className="prona-service-card">
-            <div className="prona-card-content">
-              <FontAwesomeIcon icon={faAddressCard} className="prona-card-icon" />
-              <h2>Gjendja Civile</h2>
+              <FontAwesomeIcon icon={faHome} className="prona-card-icon" />
+              <Link to="/Prona/Prona1" style={{ color: '#333' }} className='linkcla'>Aplikimi për vazhdim të licensës së vlerësuesve të pronave të paluajtshme</Link>
               <span className="prona-arrow">&#62;</span>
             </div>
           </div>
         </div>
       </div>
+      {showAlert && (
+          <div className="custom-alert">
+              <h5>Njoftim</h5>
+              <p>{alertMessage}</p>
+              <button onClick={handleCloseAlert}>Close</button>
+          </div>
+      )}
     </div>
   );
 }
 
 export default Prona;
-
