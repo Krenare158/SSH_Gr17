@@ -28,6 +28,9 @@ import Arsimi from './client/Sherbimet/Arsimi/Arsimi';
 import AutoT from './client/Sherbimet/Automjeti/AutoT'; 
 import AutoB from './client/Sherbimet/Automjeti/AutoB'; 
 import AutoP from './client/Sherbimet/Automjeti/AutoP';
+import Policia1 from './client/Sherbimet/Policia/Policia1';
+import Policia2 from './client/Sherbimet/Policia/Policia2';
+import Policia3 from './client/Sherbimet/Policia/Policia3';
 
 
 function App() {
@@ -64,6 +67,9 @@ function App() {
           <Route path="/Automjeti/AutoT" element={<AutoT />} />
           <Route path="/Automjeti/AutoB" element={<AutoB />} />
           <Route path="/Automjeti/AutoP" element={<AutoP />} />
+          <Route path="/Policia/Policia1" element={<Policia1 />} />
+          <Route path="/Policia/Policia2" element={<Policia2 />} />
+          <Route path="/Policia/Policia3" element={<Policia3 />} />
         </Routes>
       </BrowserRouter>
     );
