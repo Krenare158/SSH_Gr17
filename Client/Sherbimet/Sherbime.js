@@ -93,7 +93,7 @@ const Sherbime = () => {
         </div>
         <div className="service-card">
           <div className="icon-container">
-            <FontAwesomeIcon icon={faCog} className="service-icon" />
+            <FontAwesomeIcon icon={faFileInvoiceDollar} className="service-icon" />
           </div>
           <div className="service-card-content">
           <Link to="/Sherbimet/Kontributet" style={{ color: '#333'}} className='linkclass'>Kontributet dhe pensioni</Link>
