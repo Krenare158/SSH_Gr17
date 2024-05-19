@@ -35,6 +35,7 @@ import Kesco from'./client/Sherbimet/Komunalite/Kesco';
 import Kru from'./client/Sherbimet/Komunalite/Kru'; 
 import Prona1 from './client/Sherbimet/Prona/Prona1';
 import Kon from './client/Sherbimet/Kontributet/Kon';
+import Gjyqesori1 from './client/Sherbimet/Gjyqesori/Gjyqesori1';
 
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
           <Route path="/Komunalite/Kru" element={<Kru />} />
           <Route path="/Prona/Prona1" element={<Prona1 />} />
           <Route path="/Kontributet/Kon" element={<Kon />} />
+          <Route path="/Gjyqesori/Gjyqesori1" element={<Gjyqesori1 />} />
         </Routes>
       </BrowserRouter>
     );
