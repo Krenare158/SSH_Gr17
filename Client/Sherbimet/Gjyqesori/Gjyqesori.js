@@ -1,7 +1,8 @@
 import React from 'react';
 import './Gjyqesori.css';
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faGavel} from '@fortawesome/free-solid-svg-icons';
 
 const Gjyqesori = () => {
   return (
@@ -28,29 +29,22 @@ const Gjyqesori = () => {
           <div className="gjyqesori-service-cards-wrapper">
             <div className="gjyqesori-service-card">
               <div className="gjyqesori-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="gjyqesori-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faGavel} className="gjyqesori-card-icon" />
+                <Link to="/Gjyqesori/Gjyqesori1" style={{ color: '#333' }} className='linkcla'>Certifikata mbi dënimet penale</Link>
                 <span className="gjyqesori-arrow">&#62;</span>
               </div>
             </div>
             <div className="gjyqesori-service-card">
               <div className="gjyqesori-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="gjyqesori-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faGavel} className="gjyqesori-card-icon" />
+                <a href="https://ctm.gjyqesori-rks.org/" style={{ color: '#333' }} className='linkcla'>Monitorimi i statusit të lëndëve individuale në Gjykatë</a>
                 <span className="gjyqesori-arrow">&#62;</span>
               </div>
             </div>
             <div className="gjyqesori-service-card">
               <div className="gjyqesori-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="gjyqesori-card-icon" />
-                <h2>Gjendja Civile</h2>
-                <span className="gjyqesori-arrow">&#62;</span>
-              </div>
-            </div>
-            <div className="gjyqesori-service-card">
-              <div className="gjyqesori-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="gjyqesori-card-icon" />
-                <h2>Gjendja Civile</h2>
+                <FontAwesomeIcon icon={faGavel} className="gjyqesori-card-icon" />
+                <a href="https://odp.gjyqesori-rks.org/" style={{ color: '#333' }} className='linkcla'>Platforma e të dhënave "Online"</a>
                 <span className="gjyqesori-arrow">&#62;</span>
               </div>
             </div>
@@ -61,4 +55,3 @@ const Gjyqesori = () => {
 }
 
 export default Gjyqesori;
-
