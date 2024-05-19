@@ -33,6 +33,7 @@ import Policia2 from './client/Sherbimet/Policia/Policia2';
 import Policia3 from './client/Sherbimet/Policia/Policia3';
 import Kesco from'./client/Sherbimet/Komunalite/Kesco'; 
 import Kru from'./client/Sherbimet/Komunalite/Kru'; 
+import Prona1 from './client/Sherbimet/Prona/Prona1';
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
           <Route path="/Policia/Policia3" element={<Policia3 />} />
           <Route path="/Komunalite/Kesco" element={<Kesco />} />
           <Route path="/Komunalite/Kru" element={<Kru />} />
+          <Route path="/Prona/Prona1" element={<Prona1 />} />
         </Routes>
       </BrowserRouter>
     );
