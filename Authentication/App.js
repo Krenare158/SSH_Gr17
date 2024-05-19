@@ -31,6 +31,8 @@ import AutoP from './client/Sherbimet/Automjeti/AutoP';
 import Policia1 from './client/Sherbimet/Policia/Policia1';
 import Policia2 from './client/Sherbimet/Policia/Policia2';
 import Policia3 from './client/Sherbimet/Policia/Policia3';
+import Kesco from'./client/Sherbimet/Komunalite/Kesco'; 
+import Kru from'./client/Sherbimet/Komunalite/Kru'; 
 
 
 function App() {
@@ -70,6 +72,8 @@ function App() {
           <Route path="/Policia/Policia1" element={<Policia1 />} />
           <Route path="/Policia/Policia2" element={<Policia2 />} />
           <Route path="/Policia/Policia3" element={<Policia3 />} />
+          <Route path="/Komunalite/Kesco" element={<Kesco />} />
+          <Route path="/Komunalite/Kru" element={<Kru />} />
         </Routes>
       </BrowserRouter>
     );
