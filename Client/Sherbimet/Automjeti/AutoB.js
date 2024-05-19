@@ -3,7 +3,7 @@ import './AutoB.css';
 
 const AutoB = () => {
     const [auto, setAuto] = useState("veture");
-    const [ownerType, setOwnerType] = useState("individual"); // Add ownerType state
+    const [ownerType, setOwnerType] = useState("individual"); 
     const [subjects, setSubjects] = useState({
         english: true,
         maths: false,
@@ -13,8 +13,7 @@ const AutoB = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(auto, subjects, selectedOption, resume, ownerType); // Include ownerType in console log
-        // Add your form submission logic here
+        console.log(auto, subjects, selectedOption, resume, ownerType);
     };
 
     const handleSubjectChange = (sub) => {
@@ -26,7 +25,7 @@ const AutoB = () => {
 
     const handleReset = () => {
         setAuto("veture");
-        setOwnerType("individual"); // Reset ownerType
+        setOwnerType("individual"); 
         setSubjects({
             english: true,
             maths: false,
