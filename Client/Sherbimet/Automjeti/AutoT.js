@@ -13,7 +13,6 @@ const AutoT = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(auto, subjects, selectedOption, resume);
-        // Add your form submission logic here
     };
 
     const handleSubjectChange = (sub) => {
