@@ -3,7 +3,7 @@ import './Sherbime.css';
 import { Link } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAddressCard, faCog, faFileInvoiceDollar, faUsers, faNotesMedical,
-faCarSide, faFile, faSearch,faShieldAlt} from '@fortawesome/free-solid-svg-icons';
+faCarSide, faFile, faSearch,faShieldAlt,faGavel} from '@fortawesome/free-solid-svg-icons';
 
 const Sherbime = () => {
   return (
@@ -101,7 +101,7 @@ const Sherbime = () => {
         </div>
         <div className="service-card">
           <div className="icon-container">
-            <FontAwesomeIcon icon={faCog} className="service-icon" />
+            <FontAwesomeIcon icon={faGavel} className="service-icon" />
           </div>
           <div className="service-card-content">
           <Link to="/Sherbimet/Gjyqesori" style={{ color: '#333'}} className='linkclass'>Gjyqesori</Link>
