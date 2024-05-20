@@ -1,43 +1,43 @@
 import React from 'react';
-import './Adresa.css';
+import './auditoretLigjore.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
 
-const adresa = () => {
+const auditoretLigjore = () => {
   return (
-      <div className="adresa-service-page">
-        <div className="adresa-service-section">
-          <h4 className="adresa-section-title">Fondi i Sigurise</h4>
-          <div className="adresa-options">
-            <input type="radio" id="adresaRadio1" name="adresaOptions" value="option1" />
-            <label htmlFor="adresaRadio1">Option 1</label>
-            <input type="radio" id="adresaRadio2" name="adresaOptions" value="option2" />
-            <label htmlFor="adresaRadio2">Option 2</label>
-            <input type="radio" id="adresaRadio3" name="adresaOptions" value="option3" />
-            <label htmlFor="adresaRadio3">Option 3</label>
-            <input type="radio" id="adresaRadio4" name="adresaOptions" value="option4" />
-            <label htmlFor="adresaRadio4">Option 4</label>
+      <div className="auditoretLigjore-service-page">
+        <div className="auditoretLigjore-service-section">
+          <h4 className="auditoretLigjore-section-title">Fondi i Sigurise</h4>
+          <div className="auditoretLigjore-options">
+            <input type="radio" id="auditoretLigjoreRadio1" name="auditoretLigjoreOptions" value="option1" />
+            <label htmlFor="auditoretLigjoreRadio1">Option 1</label>
+            <input type="radio" id="auditoretLigjoreRadio2" name="auditoretLigjoreOptions" value="option2" />
+            <label htmlFor="auditoretLigjoreRadio2">Option 2</label>
+            <input type="radio" id="auditoretLigjoreRadio3" name="auditoretLigjoreOptions" value="option3" />
+            <label htmlFor="auditoretLigjoreRadio3">Option 3</label>
+            <input type="radio" id="auditoretLigjoreRadio4" name="auditoretLigjoreOptions" value="option4" />
+            <label htmlFor="auditoretLigjoreRadio4">Option 4</label>
           </div>
-          <div className="adresa-search-container">
+          <div className="auditoretLigjore-search-container">
             <input type="text" placeholder="Search..." />
             <button><FontAwesomeIcon icon={faSearch} /></button>
           </div>
         </div>
 
-        <div className="adresa-service-cards-container">
-          <div className="adresa-service-cards-wrapper">
-            <div className="adresa-service-card">
-              <div className="adresa-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="adresa-card-icon" />
+        <div className="auditoretLigjore-service-cards-container">
+          <div className="auditoretLigjore-service-cards-wrapper">
+            <div className="auditoretLigjore-service-card">
+              <div className="auditoretLigjore-card-content">
+                <FontAwesomeIcon icon={faAddressCard} className="auditoretLigjore-card-icon" />
                 <h2>Aplikimi per firme te auditimeve ligjor per here te pare</h2>
-                <span className="adresa-arrow">&#62;</span>
+                <span className="auditoretLigjore-arrow">&#62;</span>
               </div>
             </div>
-            <div className="adresa-service-card">
-              <div className="adresa-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="adresa-card-icon" />
+            <div className="auditoretLigjore-service-card">
+              <div className="auditoretLigjore-card-content">
+                <FontAwesomeIcon icon={faAddressCard} className="auditoretLigjore-card-icon" />
                 <h2>Aplikimi per firme te auditimeve ligjor per pertrirje te licenses</h2>
-                <span className="adresa-arrow">&#62;</span>
+                <span className="auditoretLigjore-arrow">&#62;</span>
               </div>
             </div>
           </div>
@@ -46,4 +46,4 @@ const adresa = () => {
   );
 }
 
-export default adresa;
+export default auditoretLigjore;

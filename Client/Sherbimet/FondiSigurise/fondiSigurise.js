@@ -1,36 +1,36 @@
 import React from 'react';
-import './Adresa.css';
+import './fondiSigurise.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
 
-const adresa = () => {
+const fondiSigurise = () => {
   return (
-      <div className="adresa-service-page">
-        <div className="adresa-service-section">
-          <h4 className="adresa-section-title">Fondi i Sigurise</h4>
-          <div className="adresa-options">
-            <input type="radio" id="adresaRadio1" name="adresaOptions" value="option1" />
-            <label htmlFor="adresaRadio1">Option 1</label>
-            <input type="radio" id="adresaRadio2" name="adresaOptions" value="option2" />
-            <label htmlFor="adresaRadio2">Option 2</label>
-            <input type="radio" id="adresaRadio3" name="adresaOptions" value="option3" />
-            <label htmlFor="adresaRadio3">Option 3</label>
-            <input type="radio" id="adresaRadio4" name="adresaOptions" value="option4" />
-            <label htmlFor="adresaRadio4">Option 4</label>
+      <div className="fondiSigurise-service-page">
+        <div className="fondiSigurise-service-section">
+          <h4 className="fondiSigurise-section-title">Fondi i Sigurise</h4>
+          <div className="fondiSigurise-options">
+            <input type="radio" id="fondiSiguriseRadio1" name="fondiSiguriseOptions" value="option1" />
+            <label htmlFor="fondiSiguriseRadio1">Option 1</label>
+            <input type="radio" id="fondiSiguriseRadio2" name="fondiSiguriseOptions" value="option2" />
+            <label htmlFor="fondiSiguriseRadio2">Option 2</label>
+            <input type="radio" id="fondiSiguriseRadio3" name="fondiSiguriseOptions" value="option3" />
+            <label htmlFor="fondiSiguriseRadio3">Option 3</label>
+            <input type="radio" id="fondiSiguriseRadio4" name="fondiSiguriseOptions" value="option4" />
+            <label htmlFor="fondiSiguriseRadio4">Option 4</label>
           </div>
-          <div className="adresa-search-container">
+          <div className="fondiSigurise-search-container">
             <input type="text" placeholder="Search..." />
             <button><FontAwesomeIcon icon={faSearch} /></button>
           </div>
         </div>
 
-        <div className="adresa-service-cards-container">
-          <div className="adresa-service-cards-wrapper">
-            <div className="adresa-service-card">
-              <div className="adresa-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="adresa-card-icon" />
+        <div className="fondiSigurise-service-cards-container">
+          <div className="fondiSigurise-service-cards-wrapper">
+            <div className="fondiSigurise-service-card">
+              <div className="fondiSigurise-card-content">
+                <FontAwesomeIcon icon={faAddressCard} className="fondiSigurise-card-icon" />
                 <h2>Donacion permes pageses elektronike me banka komerciale</h2>
-                <span className="adresa-arrow">&#62;</span>
+                <span className="fondiSigurise-arrow">&#62;</span>
               </div>
             </div>
           </div>
@@ -39,4 +39,4 @@ const adresa = () => {
   );
 }
 
-export default adresa;
+export default fondiSigurise;
