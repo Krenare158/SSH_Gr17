@@ -1,0 +1,107 @@
+body {
+    background-image: url("/public/ftuy4.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5%;
+}
+
+.kryesore-form-container {
+    max-width: 1050px;
+    margin: 10% auto;
+    padding: 20px;
+    background-color: rgba(248, 249, 250, 0.78);
+    border-radius: 8px;
+    color: #333;
+}
+.kryesore-form-wrapper {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 2%;
+    border-radius: 5px;
+    border: 2px solid rgb(181, 78, 40);
+    box-shadow: 3px 2px 2px 0px rgba(0, 0, 0, 0.305);
+}
+
+.kryesore-form-container h1 {
+    font-size: 28px;
+    text-align: left;
+    color: rgb(181, 78, 40);
+}
+
+.kryesore-form-container p {
+    font-size: 18px;
+    text-align: left;
+    margin: 2% 0;
+}
+
+.kryesore-section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.kryesore-section h4 {
+    margin-left: 10%;
+    margin-top: -1%;
+}
+
+.kryesore-card-content {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+.kryesore-link {
+    color: #333;
+}
+
+.kryesore-link a {
+    color: blue;
+    text-decoration: none;
+}
+
+.iccon {
+    font-size: 52px;
+    color: rgb(42, 35, 98);
+    margin-bottom: -9%;
+    margin-left: -95%;
+    margin-top: 2%;
+}
+
+.icconn {
+    font-size: 52px;
+    color: rgb(85, 20, 11);
+    margin-bottom: -9%;
+    margin-left: -95%;
+    margin-top: 2%;
+}
+
+.image-section {
+    margin-top: 30px;
+    margin-bottom: 5%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 230px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.h33{
+    text-align: left;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    font-size: 24px;
+    color: rgb(181, 78, 40);
+}
