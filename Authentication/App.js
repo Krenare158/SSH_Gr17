@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import GjendjaCivile from './client/Sherbimet/GjendjaCivile/GjendjaCivile';
 import Sherbime from './client/Sherbimet/Sherbime';
 import Tatimet from './client/Sherbimet/Tatimet/Tatimet';
@@ -23,8 +24,6 @@ import FaturaPer from './client/Sherbimet/Tatimet/FaturaPer';
 import Shend1 from './client/Sherbimet/Shendetsia/Shend1';
 import Shend2 from './client/Sherbimet/Shendetsia/Shend2';
 import Shend3 from './client/Sherbimet/Shendetsia/Shend3';
-import Adresa from './client/Sherbimet/Adresa/Adresa';
-import Arsimi from './client/Sherbimet/Arsimi/Arsimi';
 import AutoT from './client/Sherbimet/Automjeti/AutoT'; 
 import AutoB from './client/Sherbimet/Automjeti/AutoB'; 
 import AutoP from './client/Sherbimet/Automjeti/AutoP';
@@ -36,6 +35,7 @@ import Kru from'./client/Sherbimet/Komunalite/Kru';
 import Prona1 from './client/Sherbimet/Prona/Prona1';
 import Kon from './client/Sherbimet/Kontributet/Kon';
 import Gjyqesori1 from './client/Sherbimet/Gjyqesori/Gjyqesori1';
+import Kryesore from './client/Kryesore/Kryesore';
 
 
 function App() {
@@ -43,10 +43,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Navigate to="/register" />} />
+          <Route path="/" element={<Navigate to="/Kryesore" />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Sherbime" element={<Sherbime />} />
+          <Route path="/Kryesore" element={<Kryesore />} />
           <Route path="/Sherbimet/GjendjaCivile" element={<GjendjaCivile />} />
           <Route path="/Sherbimet/Tatimet" element={<Tatimet />} />
           <Route path="/Sherbimet/Familja" element={<Familja />} />
@@ -67,8 +68,6 @@ function App() {
           <Route path="/Shendetsia/Shend1" element={<Shend1 />} />
           <Route path="/Shendetsia/Shend2" element={<Shend2 />} />
           <Route path="/Shendetsia/Shend3" element={<Shend3 />} />
-          <Route path="/Sherbimet/Adresa" element={<Adresa />} />
-          <Route path="/Sherbimet/Arsimi" element={<Arsimi />} />
           <Route path="/Automjeti/AutoT" element={<AutoT />} />
           <Route path="/Automjeti/AutoB" element={<AutoB />} />
           <Route path="/Automjeti/AutoP" element={<AutoP />} />
@@ -81,6 +80,7 @@ function App() {
           <Route path="/Kontributet/Kon" element={<Kon />} />
           <Route path="/Gjyqesori/Gjyqesori1" element={<Gjyqesori1 />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     );
 }
