@@ -36,6 +36,7 @@ import Prona1 from './client/Sherbimet/Prona/Prona1';
 import Kon from './client/Sherbimet/Kontributet/Kon';
 import Gjyqesori1 from './client/Sherbimet/Gjyqesori/Gjyqesori1';
 import Kryesore from './client/Kryesore/Kryesore';
+import Informata from './client/Informata/Informata';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Sherbime" element={<Sherbime />} />
           <Route path="/Kryesore" element={<Kryesore />} />
+          <Route path="/Informata" element={<Informata />} />
           <Route path="/Sherbimet/GjendjaCivile" element={<GjendjaCivile />} />
           <Route path="/Sherbimet/Tatimet" element={<Tatimet />} />
           <Route path="/Sherbimet/Familja" element={<Familja />} />
