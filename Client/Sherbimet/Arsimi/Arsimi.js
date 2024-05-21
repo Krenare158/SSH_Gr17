@@ -43,14 +43,14 @@ const arsimi = () => {
                     <div className="new-service-card">
                         <div className="new-card-content">
                             <FontAwesomeIcon icon={faFileInvoiceDollar} className="new-card-icon" />
-                            <Link to="" style={{ color: '#333' }} className='linkcla'>Universiteti i Prishtines "Hasan Prishtina" - Te hyrat nga projektet</Link>
+                            <Link to="/Arsimi/projektet" style={{ color: '#333' }} className='linkcla'>Universiteti i Prishtines "Hasan Prishtina" - Te hyrat nga projektet</Link>
                             <span className="new-arrow">&#62;</span>
                         </div>
                     </div>
                     <div className="new-service-card">
                         <div className="new-card-content">
                             <FontAwesomeIcon icon={faFileInvoiceDollar} className="new-card-icon" />
-                            <Link to="" style={{ color: '#333' }} className='linkcla'>Universiteti i Prishtines "Hasan Prishtina" - Participimet</Link>
+                            <Link to="/Arsimi/participimet" style={{ color: '#333' }} className='linkcla'>Universiteti i Prishtines "Hasan Prishtina" - Participimet</Link>
                             <span className="new-arrow">&#62;</span>
                         </div>
                     </div>

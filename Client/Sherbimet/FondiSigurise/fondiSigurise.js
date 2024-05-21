@@ -26,13 +26,13 @@ const fondiSigurise = () => {
 
         <div className="fondiSigurise-service-cards-container">
           <div className="fondiSigurise-service-cards-wrapper">
-            <div className="fondiSigurise-service-card">
-              <div className="fondiSigurise-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="fondiSigurise-card-icon" />
-                <h2>Donacion permes pageses elektronike me banka komerciale</h2>
-                <span className="fondiSigurise-arrow">&#62;</span>
-              </div>
-            </div>
+          <div className="new-service-card">
+                        <div className="new-card-content">
+                            <FontAwesomeIcon icon={faFileInvoiceDollar} className="new-card-icon" />
+                            <Link to="/FondiSigurise/donacioni" style={{ color: '#333' }} className='linkcla'>Donacion përmes pagesës elektronike me banka komerciale</Link>
+                            <span className="new-arrow">&#62;</span>
+                        </div>
+                    </div>
           </div>
         </div>
       </div>
