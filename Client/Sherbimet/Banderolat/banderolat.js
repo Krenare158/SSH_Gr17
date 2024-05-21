@@ -29,7 +29,7 @@ const banderolat = () => {
             <div className="banderolat-service-card">
             <div className="banderolat-card-content">
                 <FontAwesomeIcon icon={faFileInvoiceDollar} className="banderolat-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Verifiko Banderolat nga Agjencia e Kosoves per Produkte dhe Pajisje Medicinale</Link>
+                <Link to="/Banderolat/verifikimi" style={{ color: '#333' }} className='linkcla'>Verifiko Banderolat nga Agjencia e Kosoves per Produkte dhe Pajisje Medicinale</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>
