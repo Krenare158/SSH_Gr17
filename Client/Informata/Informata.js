@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Informata.css';
 import { Link } from 'react-router-dom';
@@ -16,49 +15,49 @@ const Informata = () => {
       <div className="informata-container">
         <h4 className='in'>Informata</h4>
       </div>
-      <div className="service-cards-container">
-        <div className="service-cards-top">
-          <div className="service-card">
+      <div className="servi-cards-container">
+        <div className="servi-cards-top">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faBuilding} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Sherbimet ne nivel qendror</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faHotel} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Sherbimet ne nivel lokal</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faSeedling} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Benefitet dhe asistenca</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faCircleNotch} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Levizja dhe komunikimi</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faUsers} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Familja</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faShieldAlt} className="service-icon" />
             </div>
@@ -66,75 +65,75 @@ const Informata = () => {
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Siguria</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faNotesMedical} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Shendetesia</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faTree} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Ambienti dhe natyra</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faBookOpen} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Edukimi</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
             <FontAwesomeIcon icon={faGlobeAmericas}  className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Mergata</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faBriefcase} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Puna dhe biznesi</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
             <FontAwesomeIcon icon={faInfoCircle} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Informata per te huajt</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faCity} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Prona dhe banimi</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faIcons} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Kultura dhe koha e lire</Link>
             </div>
           </div>
-          <div className="service-card">
+          <div className="servi-card">
             <div className="icon-container">
               <FontAwesomeIcon icon={faAddressCard} className="service-icon" />
             </div>
-            <div className="service-card-content">
+            <div className="servi-card-content">
               <Link to="/Services/AddressCard" style={{ color: '#333' }} className='service-link'>Dokumente</Link>
             </div>
           </div>
