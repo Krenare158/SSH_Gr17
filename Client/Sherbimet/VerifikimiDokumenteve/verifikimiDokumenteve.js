@@ -29,14 +29,7 @@ const verifikimiDokumenteve = () => {
             <div className="verifikimiDokumenteve-service-card">
             <div className="verifikimiDokumenteve-card-content">
                 <FontAwesomeIcon icon={faFileInvoiceDollar} className="verifikimiDokumenteve-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Verifikimi i dokumenteve permes nenshkrimit digjital</Link>
-                <span className="new-arrow">&#62;</span>
-             </div>
-            </div>
-            <div className="verifikimiDokumenteve-service-card">
-            <div className="verifikimiDokumenteve-card-content">
-                <FontAwesomeIcon icon={faFileInvoiceDollar} className="verifikimiDokumenteve-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Verifikimi i dokumenteve elektronike</Link>
+                <Link to="/VerifikimiDokumenteve/dokElektronike" style={{ color: '#333' }} className='linkcla'>Verifikimi i dokumenteve elektronike</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>
