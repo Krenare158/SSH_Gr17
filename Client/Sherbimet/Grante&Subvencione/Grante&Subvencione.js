@@ -36,20 +36,6 @@ const granteSubvencione = () => {
             <div className="granteSubvencione-service-card">
             <div className="granteSubvencione-card-content">
                 <FontAwesomeIcon icon={faFileInvoiceDollar} className="granteSubvencione-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Thirrje publike per perkrahjen financiare te NVM-ve per certifikim te produkteve</Link>
-                <span className="new-arrow">&#62;</span>
-             </div>
-            </div>
-            <div className="granteSubvencione-service-card">
-            <div className="granteSubvencione-card-content">
-                <FontAwesomeIcon icon={faFileInvoiceDollar} className="granteSubvencione-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Thirrje publike per perkrahjen e NVM-ve per mbulimin e shpenzimeve te transformimit digjital</Link>
-                <span className="new-arrow">&#62;</span>
-             </div>
-            </div>
-            <div className="granteSubvencione-service-card">
-            <div className="granteSubvencione-card-content">
-                <FontAwesomeIcon icon={faFileInvoiceDollar} className="granteSubvencione-card-icon" />
                 <Link to="" style={{ color: '#333' }} className='linkcla'>Formulari per ankese</Link>
                 <span className="new-arrow">&#62;</span>
              </div>

@@ -29,14 +29,7 @@ const eKomuna = () => {
             <div className="eKomuna-service-card">
             <div className="eKomuna-card-content">
                 <FontAwesomeIcon icon={faFileInvoiceDollar} className="eKomuna-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Lejet dhe procedurat administrative per Komunen e Prishtines</Link>
-                <span className="new-arrow">&#62;</span>
-             </div>
-            </div>
-            <div className="eKomuna-service-card">
-            <div className="eKomuna-card-content">
-                <FontAwesomeIcon icon={faFileInvoiceDollar} className="eKomuna-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Lejet dhe procedurat administrative per Komunen e Prizrenit</Link>
+                <Link to="/eKomuna/prishtina" style={{ color: '#333' }} className='linkcla'>Lejet dhe procedurat administrative per Komunen e Prishtines</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>
