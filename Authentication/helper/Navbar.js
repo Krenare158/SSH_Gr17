@@ -22,7 +22,7 @@ const Navbar = () => {
             <ul>
                 <li>Kryesore</li>
                 <li><Link to="/Sherbime">Sherbime</Link></li>
-                <li>Informata</li>
+                <li><Link to="/Informata">Informata</Link></li>
                 <li>
                     <button className='btn'>
                         <FontAwesomeIcon icon={faBell} className="notification-icon" />
