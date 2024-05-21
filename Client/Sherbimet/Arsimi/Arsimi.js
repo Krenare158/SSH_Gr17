@@ -54,13 +54,6 @@ const arsimi = () => {
                             <span className="new-arrow">&#62;</span>
                         </div>
                     </div>
-                    <div className="new-service-card">
-                        <div className="new-card-content">
-                            <FontAwesomeIcon icon={faFileInvoiceDollar} className="new-card-icon" />
-                            <Link to="/Fatura" style={{ color: '#333' }} className='linkcla'>NjMP - Aplikimi per Njohje te Mesimit Paraprak</Link>
-                            <span className="new-arrow">&#62;</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             {showAlert && (
