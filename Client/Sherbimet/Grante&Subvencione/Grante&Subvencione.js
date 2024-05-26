@@ -5,6 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faMoneyBillAlt} from '@fortawesome/free-solid-svg-icons';
 
 const GranteSubvencione = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  
+  const handleLinkClick = (event) => {
+    event.preventDefault();
+    setShowAlert(true);
+  };
+
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+  };
   return (
       <div className="granteSubvencione-service-page">
         <div className="granteSubvencione-service-section">
