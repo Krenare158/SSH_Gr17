@@ -1,9 +1,10 @@
 import React from 'react';
 import './Adresa.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faBriefcase} from '@fortawesome/free-solid-svg-icons';
 
-const adresa = () => {
+const Adresa = () => {
   return (
       <div className="adresa-service-page">
         <div className="adresa-service-section">
@@ -27,11 +28,11 @@ const adresa = () => {
         <div className="adresa-service-cards-container">
           <div className="adresa-service-cards-wrapper">
             <div className="adresa-service-card">
-              <div className="adresa-card-content">
-                <FontAwesomeIcon icon={faAddressCard} className="adresa-card-icon" />
-                <h2>Deklarimi i adreses postare</h2>
-                <span className="adresa-arrow">&#62;</span>
-              </div>
+            <div className="adresa-card-content">
+                <FontAwesomeIcon icon={faBriefcase} className="adresa-card-icon" />
+                <Link to="/Adresa/adPostare" style={{ color: '#333' }} className='linkcla'>Deklarimi per anetaresim ne sindikate</Link>
+                <span className="new-arrow">&#62;</span>
+             </div>
             </div>
           </div>
         </div>
@@ -39,4 +40,5 @@ const adresa = () => {
   );
 }
 
-export default adresa;
+export default Adresa;
+

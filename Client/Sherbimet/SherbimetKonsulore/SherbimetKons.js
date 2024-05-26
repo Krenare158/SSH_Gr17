@@ -29,7 +29,7 @@ const sherbimetkons = () => {
             <div className="sherbimetkons-service-card">
             <div className="sherbimetkons-card-content">
                 <FontAwesomeIcon icon={faFileInvoiceDollar} className="sherbimetkons-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Vula Apostile dhe Legalizuese ne MPJD</Link>
+                <Link to="/SherbimetKonsulore/Vula" style={{ color: '#333' }} className='linkcla'>Vula Apostile dhe Legalizuese ne MPJD</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>

@@ -29,7 +29,7 @@ const puna = () => {
             <div className="puna-service-card">
             <div className="puna-card-content">
                 <FontAwesomeIcon icon={faFileInvoiceDollar} className="puna-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Deklarimi per anetaresim ne sindikate</Link>
+                <Link to="/Puna/Deklarimi" style={{ color: '#333' }} className='linkcla'>Deklarimi per anetaresim ne sindikate</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>
