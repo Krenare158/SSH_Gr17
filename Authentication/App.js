@@ -36,6 +36,20 @@ import Prona1 from './client/Sherbimet/Prona/Prona1';
 import Kon from './client/Sherbimet/Kontributet/Kon';
 import Gjyqesori1 from './client/Sherbimet/Gjyqesori/Gjyqesori1';
 import Kryesore from './client/Kryesore/Kryesore';
+import Informata from './client/Informata/Informata';
+import BeA from './client/Informata/BeA';
+import LK from './client/Informata/LK';
+import Fa from './client/Informata/Fa';
+import KL from './client/Informata/KL';
+import PB from './client/Informata/PB';
+import PrB from './client/Informata/PrB';
+import AN from './client/Informata/AN';
+import Doc from './client/Informata/Doc';
+import ED from './client/Informata/ED';
+import IH from './client/Informata/IH';
+import Me from './client/Informata/Me';
+import She from './client/Informata/She';
+import Sig from './client/Informata/Sig';
 
 
 function App() {
@@ -48,6 +62,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Sherbime" element={<Sherbime />} />
           <Route path="/Kryesore" element={<Kryesore />} />
+          <Route path="/Informata" element={<Informata />} />
           <Route path="/Sherbimet/GjendjaCivile" element={<GjendjaCivile />} />
           <Route path="/Sherbimet/Tatimet" element={<Tatimet />} />
           <Route path="/Sherbimet/Familja" element={<Familja />} />
@@ -79,6 +94,19 @@ function App() {
           <Route path="/Prona/Prona1" element={<Prona1 />} />
           <Route path="/Kontributet/Kon" element={<Kon />} />
           <Route path="/Gjyqesori/Gjyqesori1" element={<Gjyqesori1 />} />
+          <Route path="Informata/BeA" element={<BeA/>}/>
+          <Route path="Informata/LK" element={<LK/>}/>
+          <Route path="Informata/AN" element={<AN/>}/>
+          <Route path="Informata/Doc" element={<Doc/>}/>
+          <Route path="Informata/ED" element={<ED/>}/>
+          <Route path="Informata/Fa" element={<Fa/>}/>
+          <Route path="Informata/IH" element={<IH/>}/>
+          <Route path="Informata/KL" element={<KL/>}/>
+          <Route path="Informata/Me" element={<Me/>}/>
+          <Route path="Informata/PB" element={<PB/>}/>
+          <Route path="Informata/PrB" element={<PrB/>}/>
+          <Route path="Informata/She" element={<She/>}/>
+          <Route path="Informata/Sig" element={<Sig/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

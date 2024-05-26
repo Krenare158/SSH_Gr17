@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import logo from './assets/logo.png';
+import logo from './assets/iew.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUser, faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +22,7 @@ const Navbar = () => {
             <ul>
                 <li>Kryesore</li>
                 <li><Link to="/Sherbime">Sherbime</Link></li>
-                <li>Informata</li>
+                <li><Link to="/Informata">Informata</Link></li>
                 <li>
                     <button className='btn'>
                         <FontAwesomeIcon icon={faBell} className="notification-icon" />
