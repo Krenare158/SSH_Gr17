@@ -101,4 +101,52 @@
     font-size: 40px;
     margin-left: auto;
   }
+  .linkcla::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    bottom: 18px;
+    left: 6%;
+    background-color: rgb(23, 52, 108);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  .linkcla:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
   
+  .custom-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    color: rgb(23, 52, 108);
+  }
+  
+  .custom-alert p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .custom-alert button {
+    background-color: rgb(23, 52, 108);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 45%;
+    font-size: 16px;
+  }
+  
+  .custom-alert button:hover {
+    background-color: rgb(66, 90, 139);
+  }

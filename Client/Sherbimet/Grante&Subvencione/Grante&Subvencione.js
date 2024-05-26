@@ -1,9 +1,10 @@
 import React from 'react';
 import './Grante&Subvencione.css';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faAddressCard} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faMoneyBillAlt} from '@fortawesome/free-solid-svg-icons';
 
-const granteSubvencione = () => {
+const GranteSubvencione = () => {
   return (
       <div className="granteSubvencione-service-page">
         <div className="granteSubvencione-service-section">
@@ -28,22 +29,30 @@ const granteSubvencione = () => {
           <div className="granteSubvencione-service-cards-wrapper">
             <div className="granteSubvencione-service-card">
             <div className="granteSubvencione-card-content">
-                <FontAwesomeIcon icon={faFileInvoiceDollar} className="granteSubvencione-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Thirrje publike per subvencionim te NVM-ve per blerjen e makinerive prodhuese</Link>
+                <FontAwesomeIcon icon={faMoneyBillAlt} className="granteSubvencione-card-icon" />
+                <Link to="/Grante&Subvencione/Makinerite" style={{ color: '#333' }} className='linkcla' onClick={handleLinkClick}>Thirrje publike per subvencionim te NVM-ve per blerjen e makinerive prodhuese</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>
             <div className="granteSubvencione-service-card">
             <div className="granteSubvencione-card-content">
-                <FontAwesomeIcon icon={faFileInvoiceDollar} className="granteSubvencione-card-icon" />
-                <Link to="" style={{ color: '#333' }} className='linkcla'>Formulari per ankese</Link>
+                <FontAwesomeIcon icon={faMoneyBillAlt} className="granteSubvencione-card-icon" />
+                <Link to="/Grante&Subvencione/Ankesat" style={{ color: '#333' }} className='linkcla' onClick={handleLinkClick}>Formulari per ankese</Link>
                 <span className="new-arrow">&#62;</span>
              </div>
             </div>
           </div>
         </div>
+
+        {showAlert && (
+        <div className="custom-alert">
+          <h5>Njoftim</h5>
+          <p>Afati i aplikimit per grante dhe subvencione momentalisht eshte i mbyllur. Ankesat mund te behen vetem pas hapjes se afatit per aplikim.</p>
+          <button onClick={handleCloseAlert}>Close</button>
+        </div>
+      )}
       </div>
   );
 }
 
-export default granteSubvencione;
+export default GranteSubvencione;
