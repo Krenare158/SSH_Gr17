@@ -1,13 +1,48 @@
+// src/client/Sherbimet/Prona/Kon.js
 import React, { useState } from "react";
 import './Kon.css';
-import photo2 from '../../../assets/photo2.png'; 
+import photo2 from '../../../assets/photo2.png';
+import axios from 'axios';
 
 const Kon = () => {
     const [au, setAu] = useState("");
     const [approve, setApprove] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:3001/api/kon', { au, approve });
+            console.log('Data saved:', response.data);
+            alert('Data saved successfully');
+            downloadData(response.data.id); // Pass the ID to download data
+        } catch (error) {
+            console.error('Error saving data:', error);
+            alert('Error saving data');
+        }
+    };
+
+    const downloadData = async (id) => {
+        try {
+            const response = await axios.get(`http://localhost:3001/api/kon/${id}`);
+            if (response.status === 200) {
+                const konData = response.data;
+                const blob = new Blob([JSON.stringify(konData, null, 2)], { type: 'application/json' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = `kon-data-${id}.json`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            } else {
+                console.error('Error fetching data:', response.status, response.statusText);
+                alert('Error fetching data');
+            }
+        } catch (error) {
+            console.error('Error downloading data:', error);
+            alert('Error downloading data');
+        }
     };
 
     return (
