@@ -1,14 +1,21 @@
+// donacioni.js
 import React, { useState } from "react";
 import './donacioni.css';
+import axios from 'axios';
 
-const donacioni = () => {
-    const [selectedOption, setSelectedOption] = useState("");
+const Donacioni = () => {
     const [ref, setRef] = useState("");
-    const [showModal, setShowModal] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(selectedOption, ref);
+        try {
+            const response = await axios.post('http://localhost:3001/api/donacioni', { amount: ref });
+            console.log('Donation saved:', response.data);
+            alert('Donation saved successfully');
+        } catch (error) {
+            console.error('Error saving donation:', error);
+            alert('Error saving donation');
+        }
     };
 
     return (
@@ -29,4 +36,4 @@ const donacioni = () => {
     );
 };
 
-export default donacioni;
+export default Donacioni;
