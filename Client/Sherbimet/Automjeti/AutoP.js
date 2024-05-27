@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import './AutoP.css';
+import axios from 'axios';
 
 const AutoP = () => {
-    const [auto, setAuto] = useState("");
-    const [ownerType, setOwnerType] = useState("individual");
     const [selectedOption, setSelectedOption] = useState("");
     const [resume, setResume] = useState("");
     const [resu, setResu] = useState("");
@@ -12,21 +11,30 @@ const AutoP = () => {
     const [re, setRe] = useState("");
     const [aprovoj, setAprovoj] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(auto, selectedOption, resume, ownerType, aprovoj, resu, resum,res,re);
-    };
+        const formData = {
+            personalNumber: resume,
+            fullName: resu,
+            city: resum,
+            address: res,
+            registrationType: selectedOption,
+            expirationDate: re,
+            approved: aprovoj
+        };
 
-    const handleReset = () => {
-        setAuto("");
-        setOwnerType("individual");
-        setSelectedOption("");
-        setResume("");
-        setResu("");
-        setResum("");
-        setRes("");
-        setRe("");
-        setAprovoj(false);
+        try {
+            const response = await axios.post('http://localhost:3001/api/auto-ps', formData);
+            const { fileName } = response.data;
+
+            // Download PDF
+            const link = document.createElement('a');
+            link.href = `http://localhost:3001/api/download-pdf/${fileName}`;
+            link.download = fileName;
+            link.click();
+        } catch (error) {
+            console.error('Error saving data:', error);
+        }
     };
 
     return (
@@ -53,14 +61,14 @@ const AutoP = () => {
                         <label htmlFor="registrationType">Shkruani targat që do të rezervoni:</label>
                         <input type="text" name="registrationType" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="auto-p-input" />
                         <select name="registrationType" id="auto-b-registrationType" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="auto-b-input">
-                        <option value="" >GT</option>
-                        <option value="KS">HA</option>
-                        <option value="government">HB</option>
-                        <option value="municipal">HC</option>
-                        <option value="AME">HD</option>
-                        <option value="AME">HD</option>
-                        <option value="AME">HD</option>
-                    </select>
+                            <option value="">GT</option>
+                            <option value="">HA</option>
+                            <option value="">HB</option>
+                            <option value="">HC</option>
+                            <option value="">HD</option>
+                            <option value="">HD</option>
+                            <option value="">HD</option>
+                        </select>
 
                         <label htmlFor="expirationDate">Data e skadimit të vlefshmërisë së porosisë:</label>
                         <input type="text" name="expirationDate" value={re} onChange={(e) => setRe(e.target.value)} className="auto-p-input" placeholder="18.07.2024" />
