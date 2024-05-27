@@ -1,108 +1,89 @@
-import { useRef, useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import AuthContext from "./context/AuthProvider";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from './client/client';
-const LOGIN_URL = '/auth';
+
+// Define the regular expressions for username and password validation
+const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const LOGIN_URL = '/login';
+
+// Define the validation schema using Yup
+const validationSchema = Yup.object({
+    username: Yup.string()
+        .matches(USER_REGEX, 'Invalid username format')
+        .required('Username is required'),
+    password: Yup.string()
+        .matches(PWD_REGEX, 'Invalid password format')
+        .required('Password is required')
+});
 
 const Login = () => {
     const { setAuth } = useContext(AuthContext);
-    const userRef = useRef();
-    const errRef = useRef();
+    const navigate = useNavigate();
+    const { setIsLoggedIn } = useContext(AuthContext);
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
-
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
-
-    useEffect(() => {
-        setErrMsg('');
-    }, [user, pwd])
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    const handleSubmit = async (values, { setSubmitting, setErrors }) => {
         try {
-            // Hash the password before sending it to the server
-            const hashedPwd = await bcrypt.hash(pwd, 10); // 10 is the number of salt rounds
-            const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, pwd: hashedPwd }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            console.log(JSON.stringify(response?.data));
-            const accessToken = response?.data?.accessToken;
-            const roles = response?.data?.roles;
-            setAuth({ user, pwd: hashedPwd, roles, accessToken }); // Store hashed password
-            setUser('');
-            setPwd('');
-            setSuccess(true);
+            const response = await axios.post(LOGIN_URL, {
+                usernameR: values.username,
+                passwordR: values.password
+            });
+            console.log(response.data);
+            setAuth(true);
+            setIsLoggedIn(true); // Assuming setAuth updates authentication state
+            navigate('/Sherbime'); // Redirect to the home page after successful login
         } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password');
-            } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
+            if (!err.response) {
+                setErrors({ api: 'No Server Response' });
+            } else if (err.response.status === 409) {
+                setErrors({ username: 'Username Taken' });
             } else {
-                setErrMsg('Login Failed');
+                setErrors({ api: 'Login Failed' });
             }
-            errRef.current.focus();
         }
-    }
+        setSubmitting(false);
+    };
 
     return (
-        <>
-            {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
-                    <br />
-                    <p>
-                        <a href="#">Go to Home</a>
-                    </p>
-                </section>
-            ) : (
-                <section>
-                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1 className='login'>Sign In</h1>
-                    <form onSubmit={handleSubmit}>
+        <section>
+            <h1 className="login">Login</h1>
+            <Formik
+                initialValues={{ username: '', password: '' }}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+            >
+                {({ isSubmitting, errors }) => (
+                    <Form>
+                        {errors.api && <p className="errmsg" aria-live="assertive">{errors.api}</p>}
                         <label htmlFor="username">Username:</label>
-                        <input
+                        <Field
                             type="text"
                             id="username"
-                            ref={userRef}
+                            name="username"
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
-                            required
                         />
+                        <ErrorMessage name="username" component="p" className="errmsg" />
 
                         <label htmlFor="password">Password:</label>
-                        <input
+                        <Field
                             type="password"
                             id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
-                            required
+                            name="password"
                         />
-                        <button>Sign In</button>
-                    </form>
-                    <p>
-                        You do not have anccount?<br />
-                        <span className="line">
-                        <Link to="/register">Sign Up</Link>
-                        </span>
-                    </p>
-                </section>
-            )}
-        </>
-    )
-}
+                        <ErrorMessage name="password" component="p" className="errmsg" />
 
-export default Login
+                        <button type="submit" disabled={isSubmitting}>Login</button>
+                    </Form>
+                )}
+            </Formik>
+            <p>
+                <Link to="/Kryesore">Go to Home</Link>
+            </p>
+        </section>
+    );
+};
 
+export default Login;
