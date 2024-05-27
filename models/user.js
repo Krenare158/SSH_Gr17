@@ -14,4 +14,3 @@ const users = sequelize.define("users", {
         },
     },
 });
-
