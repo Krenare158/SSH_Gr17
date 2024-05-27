@@ -2,21 +2,21 @@
     "development": {
       "username": "root",
       "password": "passwrod",
-      "database": "project",
+      "database": "sisteme",
       "host": "localhost",
       "dialect": "mysql"
     },
     "test": {
       "username": "root",
       "password": "password",
-      "database": "project",
+      "database": "sisteme",
       "host": "localhost",
       "dialect": "mysql"
     },
     "production": {
       "username": "root",
       "password": "password",
-      "database": "project",
+      "database": "sisteme",
       "host": "localhost",
       "dialect": "mysql"
     }
