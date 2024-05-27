@@ -36,6 +36,11 @@ import Prona1 from './client/Sherbimet/Prona/Prona1';
 import Kon from './client/Sherbimet/Kontributet/Kon';
 import Gjyqesori1 from './client/Sherbimet/Gjyqesori/Gjyqesori1';
 import Kryesore from './client/Kryesore/Kryesore';
+import Arsimi from './client/Sherbimet/Arsimi/Arsimi';
+import EKomuna from './client/Sherbimet/e-Komuna/eKomuna';
+import Prishtina from './client/Sherbimet/e-Komuna/prishtina';
+import Projektet from './client/Sherbimet/Arsimi/Projektet';
+import Participimet from './client/Sherbimet/Arsimi/participimet';
 import Informata from './client/Informata/Informata';
 import BeA from './client/Informata/BeA';
 import LK from './client/Informata/LK';
@@ -50,7 +55,22 @@ import IH from './client/Informata/IH';
 import Me from './client/Informata/Me';
 import She from './client/Informata/She';
 import Sig from './client/Informata/Sig';
-
+import Adresa from './client/Sherbimet/Adresa/Adresa';
+import AdPostare from './client/Sherbimet/Adresa/adPostre';
+import AuditoretLigjore from './client/Sherbimet/AuditoretLigjore/auditoretLigjore';
+import Banderolat from './client/Sherbimet/Banderolat/banderolat';
+import Verifikimi from './client/Sherbimet/Banderolat/verifikimi';
+import FondiSigurise from './client/Sherbimet/FondiSigurise/fondiSigurise';
+import Donacioni from './client/Sherbimet/FondiSigurise/donacioni';
+import GranteSubvencione from './client/Sherbimet/Grante&Subvencione/Grante&Subvencione';
+import Puna from './client/Sherbimet/Puna/Puna';
+import Sherbimetkons from './client/Sherbimet/SherbimetKonsulore/SherbimetKons';
+import VerifikimiDokumenteve from './client/Sherbimet/VerifikimiDokumenteve/verifikimiDokumenteve';
+import DokElektronike from './client/Sherbimet/VerifikimiDokumenteve/dokElektronike';
+import PaymentPage from './client/Sherbimet/Prona/PaymentPage';
+import ConfirmationPage from './client/Sherbimet/Gjyqesori/ConfirmationPage';
+import Deklarimi from './client/Sherbimet/Puna/Deklarimi';
+import Vula from './client/Sherbimet/SherbimetKonsulore/Vula';
 
 function App() {
     return (
@@ -92,8 +112,15 @@ function App() {
           <Route path="/Komunalite/Kesco" element={<Kesco />} />
           <Route path="/Komunalite/Kru" element={<Kru />} />
           <Route path="/Prona/Prona1" element={<Prona1 />} />
+          <Route path="/Prona/PaymentPage" element={<PaymentPage/>} />
           <Route path="/Kontributet/Kon" element={<Kon />} />
           <Route path="/Gjyqesori/Gjyqesori1" element={<Gjyqesori1 />} />
+          <Route path="/Gjyqesori/ConfirmationPage" element={<ConfirmationPage />} />
+          <Route path="/Sherbimet/Arsimi" element={<Arsimi />} />
+          <Route path="/Arsimi/Projektet" element={<Projektet />} />
+          <Route path="/Arsimi/Participimet" element={<Participimet />} />
+          <Route path="/Sherbimet/eKomuna" element={<EKomuna />} />
+          <Route path="/eKomuna/Prishtina" element={<Prishtina/>} />
           <Route path="Informata/BeA" element={<BeA/>}/>
           <Route path="Informata/LK" element={<LK/>}/>
           <Route path="Informata/AN" element={<AN/>}/>
@@ -107,6 +134,21 @@ function App() {
           <Route path="Informata/PrB" element={<PrB/>}/>
           <Route path="Informata/She" element={<She/>}/>
           <Route path="Informata/Sig" element={<Sig/>}/>
+          <Route path="Sherbimet/Adresa" element={<Adresa/>}/>
+          <Route path="Adresa/AdPostare" element={<AdPostare/>}/>
+          <Route path="Sherbimet/AuditoretLigjore" element={<AuditoretLigjore/>}/>
+          <Route path="Sherbimet/Banderolat" element={<Banderolat/>}/>
+          <Route path="Banderolat/Verifikimi" element={<Verifikimi/>}/>
+          <Route path="Sherbimet/FondiSigurise" element={<FondiSigurise/>}/>
+          <Route path="FondiSigurise/Donacioni" element={<Donacioni/>}/>
+          <Route path="Sherbimet/Grante&Subvencione" element={<GranteSubvencione/>}/>
+          <Route path="Sherbimet/Puna" element={<Puna/>}/>
+          <Route path="Puna/Deklarimi" element={<Deklarimi/>}/>
+          <Route path="Sherbimet/SherbimetKonsulore" element={<Sherbimetkons/>}/>
+          <Route path="SherbimetKonsulore/Vula" element={<Vula/>}/>
+          <Route path="Sherbimet/VerifikimiDokumenteve" element={<VerifikimiDokumenteve/>}/>
+          <Route path="VerifikimiDokumenteve/DokElektronike" element={<DokElektronike/>}/>
+
         </Routes>
         <Footer/>
       </BrowserRouter>
