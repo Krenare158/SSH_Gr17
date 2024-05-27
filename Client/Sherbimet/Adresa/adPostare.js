@@ -1,69 +1,26 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import './adPostare.css';
 
-const adPostare = () => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [nrpersonal, setNrPersonal] = useState("");
-    const [contact, setContact] = useState("");
-    const [adresa, setAdresa] = useState("");
-    const [nrxhiro, setNrXhiro] = useState ("");
-    const [gender, setGender] = useState("male");
-    const [True,setTrue] = useState("");
-    const [aprovoj, setAprovoj] = useState("");
-    const [subjects, setSubjects] = useState({
-        english: true,
-        maths: false,
-        physics: false,
-    });
-    const [resume, setResume] = useState("");
-    const [url, setUrl] = useState("");
+const AdPostare = () => {
+    const [Komuna, setKomuna] = useState("");
+    const [Vendbanimi, setVendbanimi] = useState("");
+    const [Numri, setNumri] = useState("");
+    const [Rruga, setRruga] = useState("");
+    const [Kodi, setKodi] = useState("");
     const [selectedOption, setSelectedOption] = useState("");
-    const [about, setAbout] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(
-            firstName,
-            lastName,
-            email,
-            nrpersonal,
-            contact,
-            adresa,
-            nrxhiro,
-            gender,
-            True,
-            aprovoj,
-            selectedOption,
-            subjects,
-            resume,
-            url,
-            about
-        );
-        // Add your form submission logic here
-    };
-
-    const handleReset = () => {
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setNrPersonal("");
-        setContact("");
-        setAdresa("");
-        setNrXhiro("");
-        setGender("male");
-        setTrue("");
-        setAprovoj("");
-        setSubjects({
-            english: true,
-            maths: false,
-            physics: false,
-        });
-        setResume("");
-        setUrl("");
-        setSelectedOption("");
-        setAbout("");
+        try {
+            const response = await axios.post('http://localhost:3001/api/adpostare', {
+                Komuna, Vendbanimi, Numri, Rruga, Kodi, selectedOption
+            });
+            alert('Data saved successfully');
+        } catch (error) {
+            console.error('Error saving data:', error);
+            alert('Error saving data');
+        }
     };
 
     return (
@@ -73,47 +30,30 @@ const adPostare = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="Left-column">
                         <h4>Adresa postare e banimit</h4>
-                        <label htmlFor="firstname">Komuna</label>
-                        <input type="text" name="firstname" id="firstname" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="Enter First Name" required className="Form-input" />
+                        <label htmlFor="Komuna">Komuna:</label>
+                        <input type="text" name="Komuna" id="Komuna" value={Komuna} onChange={(e) => setKomuna(e.target.value)} placeholder="Enter Komuna" required className="Form-input" />
 
-                        <label htmlFor="lastname">Vendbanimi:</label>
-                        <input type="text" name="lastname" id="lastname" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Enter Last Name" required className="Form-input" />
+                        <label htmlFor="Vendbanimi">Vendbanimi:</label>
+                        <input type="text" name="Vendbanimi" id="Vendbanimi" value={Vendbanimi} onChange={(e) => setVendbanimi(e.target.value)} placeholder="Enter Vendbanimi" required className="Form-input" />
 
-                        <label htmlFor="nrpersonal">Rruga:</label>
-                        <input type="text" name="nrpersonal" id="nrpersonal" value={nrpersonal} onChange={(e) => setNrPersonal(e.target.value)} placeholder="Enter NrPersonal" required className="Form-input" />
-
-                        <label htmlFor="email">Numri i hyrjes:</label>
-                        <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" required className="Form-input" />
-
-                        <label htmlFor="tel">Kodi postar:</label>
-                        <input type="tel" name="contact" id="contact" value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Enter Mobile number" required className="Form-input" />
+                        <label htmlFor="Rruga">Rruga:</label>
+                        <input type="text" name="Rruga" id="Rruga" value={Rruga} onChange={(e) => setRruga(e.target.value)} placeholder="Enter Rruga" required className="Form-input"/>
+                        
+                        <label htmlFor="Numri">Numri i hyrjes:</label>
+                        <input type="text" name="Numri" id="Numri" value={Numri} onChange={(e) => setNumri(e.target.value)} placeholder="Enter Numri i hyrjes" required className="Form-input" />
+                        
+                        <label htmlFor="Kodi">Kodi postar:</label>
+                        <input type="text" name="Kodi" id="Kodi" value={Kodi} onChange={(e) => setKodi(e.target.value)} placeholder="Enter Kodi" required className="Form-input" />
                     </div>
-
-                  <div className="Right-column">
-                       {/*   <label>Your best Subject</label>
-                        <div className="subject-options">
-                            <input type="checkbox" name="lang" id="english" checked={subjects.english} onChange={() => handleSubjectChange("english")} className="Form-input" />
-                            <label htmlFor="english">English</label>
-
-                            <input type="checkbox" name="lang" id="maths" checked={subjects.maths} onChange={() => handleSubjectChange("maths")} className="Form-input" />
-                            <label htmlFor="maths">Maths</label>
-
-                            <input type="checkbox" name="lang" id="physics" checked={subjects.physics} onChange={() => handleSubjectChange("physics")} className="Form-input" />
-                            <label htmlFor="physics">Physics</label>
-                        </div>*/} 
-
+                    <div className="Right-column">
                         <label htmlFor="select">Lloji i objektit:</label>
+                        
                         <select name="select" id="select" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="Form-input">
-                                <option value="1">Hyrje e vecante</option>
-                                <option value="2">Objekt shumekatesh</option>
+                            <option value="1">Hyrje e vecante</option>
+                            <option value="2">Objekt shumekatesh</option>
                         </select>
-
-                      {/* <label htmlFor="about">About</label>
-                        <textarea name="about" id="about" cols="30" rows="10" onChange={(e) => setAbout(e.target.value)} placeholder="About yourself" required className="Form-textarea"></textarea>
-                    */} 
-                    </div> 
+                    </div>
                     
-
                     <div className="Button-container">
                         <button type="submit" value="Submit" className="Form-button">Ruaj</button>
                     </div>
@@ -121,5 +61,6 @@ const adPostare = () => {
             </fieldset>
         </div>
     );
-    };
-export default adPostare;
+};
+
+export default AdPostare;
