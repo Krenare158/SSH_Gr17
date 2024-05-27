@@ -1,54 +1,40 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import './ApFemije.css';
 
 function ApFemije() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
-    const [nrpersonal, setNrPersonal] = useState("");
+    const [nrPersonal, setNrPersonal] = useState("");
     const [contact, setContact] = useState("");
     const [adresa, setAdresa] = useState("");
-    const [nrxhiro, setNrXhiro] = useState("");
+    const [nrXhiro, setNrXhiro] = useState("");
     const [gender, setGender] = useState("male");
-    const [aprovoj, setAprovoj] = useState("");
+    const [aprovoj, setAprovoj] = useState(false);
     const [che, setChe] = useState("");
-    const [subjects, setSubjects] = useState({
-        english: true,
-        maths: false,
-        physics: false,
-    });
     const [resume, setResume] = useState("");
     const [url, setUrl] = useState("");
     const [selectedOption, setSelectedOption] = useState("");
     const [about, setAbout] = useState("");
+    const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(
-            firstName,
-            lastName,
-            email,
-            nrpersonal,
-            contact,
-            adresa,
-            nrxhiro,
-            gender,
-            aprovoj,
-            che,
-            selectedOption,
-            subjects,
-            resume,
-            url,
-            about
-        );
-        // Add your form submission logic here
-    };
+        setError("");
 
-    const handleSubjectChange = (sub) => {
-        setSubjects((prev) => ({
-            ...prev,
-            [sub]: !prev[sub],
-        }));
+        try {
+            const response = await axios.post('http://localhost:3001/api/ap_femije', {
+                firstName, lastName, email, nrPersonal, contact, adresa, nrXhiro, gender,
+                aprovoj, che, 
+                resume, url, selectedOption, about
+            });
+            console.log('Data saved:', response.data);
+            alert('Data saved successfully');
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setError('Error submitting form');
+        }
     };
 
     const handleReset = () => {
@@ -60,13 +46,8 @@ function ApFemije() {
         setAdresa("");
         setNrXhiro("");
         setGender("male");
-        setAprovoj("");
+        setAprovoj(false);
         setChe("");
-        setSubjects({
-            english: true,
-            maths: false,
-            physics: false,
-        });
         setResume("");
         setUrl("");
         setSelectedOption("");
@@ -86,26 +67,23 @@ function ApFemije() {
                         <label htmlFor="lastname">Last Name*</label>
                         <input type="text" name="lastname" id="lastname" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Enter Last Name" required className="FormInput" />
 
+                        <label htmlFor="email">Email*</label>
+                        <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Email" required className="FormInput" />
+
                         <label htmlFor="nrpersonal">NrPersonal*</label>
-                        <input type="text" name="nrpersonal" id="nrpersonal" value={nrpersonal} onChange={(e) => setNrPersonal(e.target.value)} placeholder="Enter NrPersonal" required className="FormInput" />
+                        <input type="text" name="nrpersonal" id="nrpersonal" value={nrPersonal} onChange={(e) => setNrPersonal(e.target.value)} placeholder="Enter NrPersonal" required className="FormInput" />
 
-                        <label htmlFor="email">Enter Email*</label>
-                        <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" required className="FormInput" />
+                        <label htmlFor="contact">Contact*</label>
+                        <input type="text" name="contact" id="contact" value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Enter Contact" required className="FormInput" />
 
-                        <label htmlFor="tel">Contact*</label>
-                        <input type="tel" name="contact" id="contact" value={contact} onChange={(e) => setContact(e.target.value)} placeholder="Enter Mobile number" required className="FormInput" />
+                        <label htmlFor="adresa">Adresa*</label>
+                        <input type="text" name="adresa" id="adresa" value={adresa} onChange={(e) => setAdresa(e.target.value)} placeholder="Enter Adresa" required className="FormInput" />
 
-                        <label htmlFor="adresa">Addresa*</label>
-                        <input type="text" name="adresa" id="adresa" value={adresa} onChange={(e) => setAdresa(e.target.value)} placeholder="Enter Address" required className="FormInput" />
-
-                        <label htmlFor="nrxhiro">NrXhirollogaris*</label>
-                        <input type="text" name="nrxhiro" id="nrxhiro" value={nrxhiro} onChange={(e) => setNrXhiro(e.target.value)} placeholder="Enter NrXhirollogaris" required className="FormInput" />
-                        <p className="FormPara">Vemendje. Xhirollogaria banakare duhet te jete ne emer te aplikuesit.Te gjitha aplikimet 
-                            qe behen me ndonje xhirollogari tjeter, do te refuzohen.
-                        </p>
+                        <label htmlFor="nrXhiro">NrXhirollogaris*</label>
+                        <input type="text" name="nrXhiro" id="nrXhiro" value={nrXhiro} onChange={(e) => setNrXhiro(e.target.value)} placeholder="Enter NrXhirollogaris" required className="FormInput" />
 
                         <label htmlFor="gender">Gender*</label>
-                        <div className="FormGenderOptions">
+                        <div className="GenderOptions">
                             <input type="radio" name="gender" value="male" id="male" checked={gender === "male"} onChange={(e) => setGender(e.target.value)} className="FormInput" />
                             <label htmlFor="male">Male</label>
 
@@ -115,35 +93,40 @@ function ApFemije() {
                             <input type="radio" name="gender" value="other" id="other" checked={gender === "other"} onChange={(e) => setGender(e.target.value)} className="FormInput" />
                             <label htmlFor="other">Other</label>
                         </div>
-                        
+
+                        <label htmlFor="isEmployed">Are you employed?</label>
+                        <div className="isEmployedOptions">
+                            <input type="radio" name="isEmployed" value="Yes" id="Yes" checked={che === "Yes"} onChange={(e) => setChe(e.target.value)} className="FormInput" />
+                            <label htmlFor="Yes">Yes</label>
+
+                            <input type="radio" name="isEmployed" value="No" id="No" checked={che === "No"} onChange={(e) => setChe(e.target.value)} className="FormInput" />
+                            <label htmlFor="No">No</label>
+                        </div>
                     </div>
 
                     <div className="RightColumn">
-                        {/* Right column inputs */}
-                        <label htmlFor="file">NrPersonal i femijes*</label>
-                        <input type="text" name="file" id="file" value={resume} onChange={(e) => setResume(e.target.value)} placeholder="Enter the data" required className="FormInput" />
-                        <div className="FormCheckboxContainer">
-                            <input type="checkbox" name="che" value="che" id="che" checked={che === "che"} onChange={(e) => setChe(e.target.value)} className="FormCheckbox" />
-                            <label htmlFor="che" className="che">Kujdestar/e ligjor/e?</label>
-                        </div>
-                        <p className="FormPara">Vëmendje: Opcioni Kujdestar Ligjor zgjidhet në rastet kur sipas legjislacionit në fuqi personi caktohet Kujdestari Ligjor, si p.sh. me rastin e vdekjes së prindit, humbja e zotësisë së veprimit të prindit etj.</p>
+                        <h4>Të dhënat e fëmijës</h4>
+
+                        <label htmlFor="nrfoshnjes">NrPersonal i foshnjes*</label>
+                        <input type="text" name="nrfoshnjes" id="nrfoshnjes" value={resume} onChange={(e) => setResume(e.target.value)} placeholder="Enter NrPersonal i foshnjes" required className="FormInput" />
+
                         <label htmlFor="select">Select your choice</label>
                         <select name="select" id="select" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="FormInput">
                             <option value="" disabled>Select your Nationality</option>
-                            <option value="1">Shqiptar</option>
-                            <option value="2">Serb</option>
-                            <option value="3">Turk</option>
-                            <option value="4">Boshnjak</option>
-                            <option value="5">Rom</option>
-                            <option value="6">Ashkali</option>
-                            <option value="t">Te tjera</option>
+                            <option value="Shqiptar">Shqiptar</option>
+                            <option value="Serb">Serb</option>
+                            <option value="Turk">Turk</option>
+                            <option value="Boshnjak">Boshnjak</option>
+                            <option value="Rom">Rom</option>
+                            <option value="Ashkali">Ashkali</option>
+                            <option value="Te tjera">Te tjera</option>
                         </select>
-                    </div>
-                    <p className="FormPara">Deklaroj se jam lehone dhe se plotesoj kritert per perfitim nga masa 3.5 e Pakos se Ringjallje Ekonomike
-                        sipas vendimit te Ministrise se Finacave, Punes dhe Transfereve 54/2021 te dates 0.8.09.2021</p>
-                    <div className="FormCheckboxContainer">
-                        <input type="checkbox" name="aprovoj" value="aprovoj" id="aprovoj" checked={aprovoj === "aprovoj"} onChange={(e) => setAprovoj(e.target.value)} className="FormCheckbox" />
-                        <label htmlFor="aprovoj" className="ap">Aprovoj</label>
+                    </div> 
+
+                    <p className="Note">I declare that I am a bride and meet the criteria for benefits from Package 3.5 of the Economic Revival Package according to the decision of the Ministry of Finance, Labor and Transfers 54/2021 dated 0.8.09.2021</p>
+                    <div className="SubjectOptions">
+                        <input type="checkbox" name="aprovoj" value="aprovoj" id="aprovoj" checked={aprovoj} onChange={(e) => setAprovoj(e.target.checked)} className="FormInput" />
+                        <label htmlFor="aprovoj">Aprovoj</label>
                     </div>
 
                     <div className="ButtonContainer">
@@ -151,6 +134,7 @@ function ApFemije() {
                         <button type="submit" value="Submit" className="FormButton">Submit</button>
                     </div>
                 </form>
+                {error && <p className="errorMessage">{error}</p>}
             </fieldset>
         </div>
     );
