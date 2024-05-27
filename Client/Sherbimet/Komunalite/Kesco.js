@@ -1,71 +1,79 @@
 import React, { useState } from "react";
 import './Kesco.css';
-import './Modal.css';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import Modal from './Modal';
-import photo from '../../../assets/photo.png'; 
-import photo1 from '../../../assets/photo1.png'; 
+import axios from 'axios';
 
 const Kesco = () => {
     const [selectedOption, setSelectedOption] = useState("");
     const [ref, setRef] = useState("");
-    const [showModal, setShowModal] = useState(false);
+    const [searchResult, setSearchResult] = useState(null);
+    const [error, setError] = useState(null);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(selectedOption, ref);
+        try {
+            const response = await axios.post('http://localhost:3001/api/kesco-bills', {
+                region: selectedOption,
+                reference: ref
+            });
+            console.log('Data saved:', response.data);
+            alert('Data saved successfully');
+        } catch (error) {
+            console.error('Error saving data:', error);
+            alert('Error saving data');
+        }
     };
-
-    const handleReset = () => {
-        setSelectedOption("");
-        setRef("");
-    };
-
-    const handleLinkClick = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
-        setShowModal(true);
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-    };
-
+        if (!selectedOption || !ref) {
+          setError('Both region and reference are required');
+          return;
+        }
+        try {
+          const response = await axios.post('http://localhost:3001/api/kesco-bills/search', {
+            region: selectedOption,
+            reference: ref
+          });
+          if (response.data.found) {
+            setSearchResult(response.data.record);
+            setError(null);
+          } else {
+            setSearchResult(null);
+            setError('Record not found');
+          }
+        } catch (error) {
+          console.error('Error searching data:', error);
+          setError('Error searching data');
+        }
+      };
+      
     return (
-            <div className="kesco-form-container">
-            <img src={photo1} alt="Shifra e konsumatorit" id="imgg"  />
-                <h2>KESCO - Shiko dhe paguaj faturat e energjisë elektrike</h2>
-                <fieldset className="kesco-form-wrapper">
-                    <label htmlFor="reference">Kërkoni sipas shifrës të konsumatorit që gjendet brenda faturës</label>
-                    <div className="form-elements">
-                        <select name="region" id="region" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="input">
-                            <option value="">Zgjidhni një opsion</option>
-                            <option value="Region1">Region1</option>
-                            <option value="Region2">Region2</option>
-                            <option value="Region3">Region3</option>
-                        </select>
-
-                        <input type="text" name="reference" value={ref} onChange={(e) => setRef(e.target.value)} className="kesco-input" placeholder="Shkruaj këtu" />
-                        
-                        <button type="submit" onClick={handleSubmit} className="form-button">Kërko</button>
-                    </div>
-                    <div className="vem">
-                        <h4>Vëmendje</h4>
-                        <div className="komunali-card-content">
-                            <FontAwesomeIcon icon={faArrowRight} className="komunali-card-icon" />
-                            <p style={{ color: '#333' }} className='linkla'>Përditësimi i shënimeve mund të merr kohë deri në 24 orë.</p>
-                        </div>
-                        <div className="komunali-card-content">
-                            <FontAwesomeIcon icon={faArrowRight} className="komunali-card-icon" />
-                            <Link to="#" onClick={handleLinkClick} style={{ color: 'rgb(138, 13, 13)' }} className='linkla'>Ku mund ta gjej shifrën e konsumatorit?</Link>
-                        </div>
-                    </div>
-                </fieldset>
-                <Modal show={showModal} onClose={handleCloseModal}>
-                    <img src={photo} alt="Shifra e konsumatorit" style={{ width: '100%' }} />
-                </Modal>
-            </div>
+        <div className="kesco-form-container">
+            <h2>KESCO - Shiko dhe paguaj faturat e energjisë elektrike</h2>
+            <fieldset className="kesco-form-wrapper">
+                <label htmlFor="reference">Kërkoni sipas shifrës të konsumatorit që gjendet brenda faturës</label>
+                <div className="form-elements">
+                    <select name="region" id="region" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="inputtt">
+                        <option value="">Zgjidhni një opsion</option>
+                        <option value="Region1">Region1</option>
+                        <option value="Region2">Region2</option>
+                        <option value="Region3">Region3</option>
+                    </select>
+                    <input type="text" name="reference" value={ref} onChange={(e) => setRef(e.target.value)} className="kesco-iput" placeholder="Shkruaj këtu" />
+                    <button type="button" onClick={handleSearch} className="form-bton">Kërko</button>
+                </div>
+            </fieldset>
+            {searchResult && (
+                <div className="search-result">
+                    <h3>Search Result:</h3>
+                    <p>{JSON.stringify(searchResult)}</p>
+                </div>
+            )}
+            {error && (
+                <div className="error">
+                    <p>{error}</p>
+                </div>
+            )}
+        </div>
     );
 };
 
